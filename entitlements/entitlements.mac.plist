@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <!-- 필수 권한: Electron 앱 구동 및 노터라이즈를 위한 설정 -->
+    <key>com.apple.security.cs.allow-jit</key>
+    <true/>
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+
+    <!-- 선택 권한: 파일 접근 및 네트워크 통신 -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+    <key>com.apple.security.network.server</key>
+    <true/>
+
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+    <key>com.apple.security.files.downloads.read-write</key>
+    <true/>
+
+    <!-- 기타 권한: 마이크/카메라 등 (필요 시만 사용) -->
+    <!--
+    <key>com.apple.security.device.camera</key>
+    <true/>
+    <key>com.apple.security.device.microphone</key>
+    <true/>
+    -->
+
+    <!-- 샌드박스 활성화 (명시적으로 꺼도 되지만, 보통 활성화하지 않음) -->
+    <!-- <key>com.apple.security.app-sandbox</key> -->
+    <!-- <true/> -->
+  </dict>
+</plist>

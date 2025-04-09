@@ -2,7 +2,7 @@
   "name": "face-blur",
   "description": "이미지에서 얼굴을 자동 감지하고 블러 처리하는 데스크탑 앱",
   "author": "plumpstudio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "main": "electron.js",
   "homepage": "./",

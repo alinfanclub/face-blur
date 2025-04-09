@@ -172,7 +172,7 @@ function App() {
         </div>
 
         <div className="form-group">
-          <label>🧠 얼굴 인식 민감도(낮을수록 더 많이 인식): {minConfidence}</label>
+          <label>🤔 얼굴 인식 민감도(낮을수록 더 많이 인식): {minConfidence}</label>
           <input
             type="range"
             min="0.1"

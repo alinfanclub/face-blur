@@ -11,7 +11,7 @@
 
 ## Installation
 
-1. Download the latest release from the [GitHub Releases Page](https://github.com/alinfanclub/face-blur/releases/tag/v0.1.0).
+1. Download the latest release from the [GitHub Releases Page](https://github.com/alinfanclub/face-blur/releases).
 2. Open the `.dmg` file and drag the **Face Blur** app to your Applications folder.
 3. Launch **Face Blur** from your Applications folder.
 

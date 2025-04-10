@@ -1,4 +1,4 @@
-// 📁 electron/preload.js
+// preload.js
 const { contextBridge, ipcRenderer } = require('electron');
 
 console.log('[PRELOAD] ✅ preload loaded'); // ← 반드시 찍혀야 함!
@@ -6,7 +6,7 @@ console.log('[PRELOAD] ✅ preload loaded'); // ← 반드시 찍혀야 함!
 let channelCallback = null;
 
 contextBridge.exposeInMainWorld('myPreload', {
-  sendImages: (images) => ipcRenderer.send('save-images', images),
+  sendImages: (images) => ipcRenderer.invoke('save-images', images),  // invoke로 변경
   listenChannelMessage: (callback) => {
     channelCallback = callback;
     ipcRenderer.on('channel', (_, data) => callback(data));

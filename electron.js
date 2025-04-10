@@ -50,8 +50,8 @@ function getUniqueFilePath(basePath) {
   return uniquePath;
 }
 
-// 💾 이미지 저장 IPC
-ipcMain.on('save-images', async (event, images) => {
+// 💾 이미지 저장 IPC 핸들러 등록
+ipcMain.handle('save-images', async (event, images) => {
   console.log('[MAIN] 🧾 save-images 이벤트 수신됨');
 
   const downloadsFolder = path.join(os.homedir(), 'Downloads', 'BlurredImages');
@@ -60,6 +60,7 @@ ipcMain.on('save-images', async (event, images) => {
     console.log('[MAIN] 📁 BlurredImages 폴더 생성됨');
   }
 
+  const savedPaths = [];
   for (let { buffer, originalName, extension } of images) {
     const ext = extension || '.png';
     const nameWithoutExt = path.parse(originalName).name;
@@ -68,6 +69,7 @@ ipcMain.on('save-images', async (event, images) => {
 
     try {
       fs.writeFileSync(uniquePath, Buffer.from(buffer));
+      savedPaths.push(uniquePath);
       console.log(`[MAIN] ✅ 저장됨: ${uniquePath}`);
     } catch (err) {
       console.error(`[MAIN] ❌ 저장 실패: ${originalName}`, err);
@@ -82,6 +84,8 @@ ipcMain.on('save-images', async (event, images) => {
 
   // Finder로 저장 폴더 열기
   shell.openPath(downloadsFolder);
+
+  return savedPaths;  // 저장된 경로를 반환
 });
 
 ipcMain.on('test-preload', () => {

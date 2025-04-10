@@ -69,6 +69,7 @@
     "mac": {
       "target": "dmg",
       "icon": "assets/icon.icns",
+      "artifactName": "Face-Blur-Installer-${version}.dmg",
       "notarize": true,
       "hardenedRuntime": true,
       "entitlements": "entitlements/entitlements.mac.plist",

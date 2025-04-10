@@ -1,4 +1,6 @@
-/* 📁 appDsign.css */
+/* 📁 appDesign.css */
+
+/* Body Styling */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -10,15 +12,19 @@ body {
   height: 100vh;
 }
 
+/* Container Styling */
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   max-width: 600px;
   padding: 2rem;
+  flex-direction: column;
+  width: 600px;
 }
 
+/* Card Styling */
 .card {
   background: #ffffff;
   padding: 2rem;
@@ -28,8 +34,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  box-sizing: border-box;
 }
 
+/* Title Styling */
 .title {
   font-size: 1.75rem;
   text-align: center;
@@ -37,16 +45,19 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Loading Text Styling */
 .loading {
   text-align: center;
   color: #999;
 }
 
+/* File Input Styling */
 .file-input {
   width: 100%;
   font-size: 1rem;
 }
 
+/* Form Group Styling */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -54,21 +65,25 @@ body {
   font-size: 0.95rem;
 }
 
+/* Label Styling */
 .form-group label {
   font-weight: 600;
   color: #333;
 }
 
+/* Input Styling */
 .form-group input[type="range"] {
   width: 100%;
 }
 
+/* Select Styling */
 .form-group select {
   padding: 0.4rem;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
 
+/* Button Styling */
 .button {
   padding: 0.75rem;
   font-size: 1rem;
@@ -84,9 +99,192 @@ body {
   background-color: #005fcc;
 }
 
+.button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+
+/* Status Text Styling */
 .status {
   font-size: 0.9rem;
   color: #444;
   text-align: center;
   word-break: break-word;
+}
+
+/* 로딩 중 텍스트 */
+.loading {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+/* 오버레이 처리 중일 때 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  z-index: 1000;
+  pointer-events: all;
+}
+
+.image-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-preview {
+  width: 22%;
+  cursor: pointer;
+}
+
+.image-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Gallery Styling */
+.preview-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.preview-item {
+  width: 100%;
+  padding-bottom: 100%; /* 1:1 Aspect Ratio */
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Lightbox Styling */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.lightbox-image {
+  max-width: 80%;
+  max-height: 80%;
+  margin-bottom: 20px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.lightbox-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lightbox .button {
+  width: 200px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #007aff;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lightbox .button:hover {
+  background-color: #005fcc;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.slide-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slide-button:first-of-type {
+  left: 10px;
+}
+
+.slide-button:last-of-type {
+  right: 10px;
+}
+
+.lightbox-image {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  aspect-ratio: 1;
+}
+.lightbox-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-direction: row;
+}
+
+.lightbox-buttons button {
+  padding: 0.5rem 1rem;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lightbox-buttons button:hover {
+  background-color: #005fcc;
 }

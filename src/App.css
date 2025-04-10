@@ -98,3 +98,81 @@
   z-index: 1000;
   pointer-events: all;
 }
+
+.image-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-preview {
+  width: 22%;
+  cursor: pointer;
+}
+
+.image-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 슬라이드 버튼 스타일 */
+/* 슬라이드 버튼 스타일 */
+.lightbox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slide-button:disabled {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.slide-button:first-of-type {
+  left: 10px;
+}
+
+.slide-button:last-of-type {
+  right: 10px;
+}
+
+.lightbox-image {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.lightbox-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.lightbox-buttons button {
+  padding: 0.5rem 1rem;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lightbox-buttons button:hover {
+  background-color: #005fcc;
+}
+
